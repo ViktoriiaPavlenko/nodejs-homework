@@ -19,3 +19,6 @@ const validation = (data) => {
 };
 
 module.exports = validation;
+//   .pattern( //     // eslint-disable-next-line no-useless-escape //     /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/, //     "numbers" //   )
+// mongodb+srv://viktoriia-hw-03:<password>@cluster0.z8ba3.mongodb.net/test
+// mongodb+srv://viktoriia-hw-03:password4321@cluster0.z8ba3.mongodb.net/test

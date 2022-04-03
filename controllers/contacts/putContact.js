@@ -1,5 +1,6 @@
 const validation = require("../../models/validation");
-const { updateContact } = require("../../models/contacts");
+// const { updateContact } = require("../../models/contacts");
+const { Contact } = require("../../models");
 
 module.exports = async (req, res, next) => {
   const id = req.params.contactId;
@@ -14,6 +15,8 @@ module.exports = async (req, res, next) => {
     res.status(400).json({ message: validationResult.error.details });
     return;
   }
-  const updatedContact = await updateContact(id, body);
-  res.status(200).json({ status: "success", data: updatedContact });
+  const updatedContact = await Contact.findByIdAndUpdate(id, req.body, {
+    new: true,
+  });
+  res.status(200).json({ status: "success", data: { updatedContact } });
 };
