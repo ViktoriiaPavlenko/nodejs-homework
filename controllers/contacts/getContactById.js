@@ -1,4 +1,3 @@
-// const { getContactById } = require("../../models/contacts");
 const { Contact } = require("../../models");
 
 module.exports = async (req, res, next) => {
@@ -11,5 +10,5 @@ module.exports = async (req, res, next) => {
     });
     return;
   }
-  res.json({ status: "success", data: { contactById } });
+  res.json({ status: "success", data: contactById });
 };

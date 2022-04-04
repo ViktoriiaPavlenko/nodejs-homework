@@ -1,4 +1,3 @@
-// const { removeContact } = require("../../models/contacts.js");
 const { Contact } = require("../../models");
 
 module.exports = async (req, res, next) => {

@@ -1,5 +1,4 @@
-const validation = require("../../models/validation");
-// const { addContact } = require("../../models/contacts");
+const { validation } = require("../../models/validation");
 const { Contact } = require("../../models");
 
 module.exports = async (req, res, next) => {
@@ -9,6 +8,5 @@ module.exports = async (req, res, next) => {
     return;
   }
   const newContact = await Contact.create(req.body);
-  // const newContact = await addContact(req.body);
-  res.status(201).json({ status: "Created", data: { newContact } });
+  res.status(201).json({ status: "Created", data: newContact });
 };
