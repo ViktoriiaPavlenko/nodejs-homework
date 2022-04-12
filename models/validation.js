@@ -13,9 +13,18 @@ const validation = (data) => {
       .min(10)
       .max(16)
       .required(),
+    favorite: Joi.bool(),
   });
-
   return schema.validate(data);
 };
 
 module.exports = validation;
+
+const favoriteValidation = (data) => {
+  const schema = Joi.object({
+    favorite: Joi.bool(),
+  });
+  return schema.validate(data);
+};
+
+module.exports = { validation, favoriteValidation };
