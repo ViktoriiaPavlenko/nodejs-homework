@@ -7,6 +7,7 @@ module.exports = async (req, res, next) => {
     res.status(400).json({ message: validationResult.error.details });
     return;
   }
-  const newContact = await Contact.create(req.body);
+  const { _id } = req.user;
+  const newContact = await Contact.create({ ...req.body, owner: _id });
   res.status(201).json({ status: "Created", data: newContact });
 };

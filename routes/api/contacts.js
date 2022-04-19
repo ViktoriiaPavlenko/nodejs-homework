@@ -9,10 +9,12 @@ const {
   patchFavoriteContact,
 } = require("../../controllers/contacts");
 
+const { auth } = require("../../middlewares");
+
 const router = express.Router();
-router.get("/", getContacts);
+router.get("/", auth, getContacts);
 router.get("/:contactId", getContactById);
-router.post("/", postContact);
+router.post("/", auth, postContact);
 router.delete("/:contactId", deleteContact);
 router.put("/:contactId", putContact);
 router.patch("/:contactId/favorite", patchFavoriteContact);
